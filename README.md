@@ -1,3 +1,4 @@
+
 # Gesture Controlled Robotic Hand
 
 A gesture-controlled robotic hand system that uses MediaPipe for hand tracking, MuJoCo for physics-based simulation, and Arduino for real-time control of robotic movements.
@@ -5,11 +6,10 @@ A gesture-controlled robotic hand system that uses MediaPipe for hand tracking, 
 ---
 🎥 robotic hand demo
 
+
 ![mujoco_1080x608](https://github.com/user-attachments/assets/32693cd3-f3da-4d8d-984d-56c164360f61)
 
 ![handmovements_1080x608](https://github.com/user-attachments/assets/b643875a-8f97-447e-89ec-f45bcd9de111)
-
-
 
 
 
@@ -43,17 +43,71 @@ This project aims to develop an intuitive, real-time gesture-based control syste
 
 ---
 
-🔬 Key Features
-	•	🎯 Real-time hand gesture tracking
-	•	🤖 Joint-level robotic finger control
-	•	📐 Accurate angle calculation using kinematics
-	•	🎮 Smooth motion using interpolation
-	•	🧊 Noise reduction (dead zones + filtering)
-	•	⚡ Real-time FPS and performance monitoring
-	•	🧩 Modular design (Simulation + Hardware)
+## 🔬 Key Features
+
+- 🎯 **Real-time hand gesture tracking**  
+- 🤖 **Joint-level robotic finger control**  
+- 📐 **Accurate angle calculation using kinematics**  
+- 🎮 **Smooth motion using interpolation**  
+- 🧊 **Noise reduction (dead zones + filtering)**  
+- ⚡ **Real-time FPS and performance monitoring**  
+- 🧩 **Modular design (Simulation + Hardware)**  
 
   ---
 
+
+ ## 🌍 Applications
+
+This gesture-controlled robotic hand system has potential applications in various real-world domains:
+
+- 🦾 **Prosthetics & Assistive Technology**  
+  Can be used to develop advanced prosthetic hands controlled by natural human gestures.
+
+- 🏥 **Medical & Rehabilitation**  
+  Useful in physiotherapy and rehabilitation systems for hand movement training and recovery.
+
+- 🏭 **Industrial Robotics**  
+  Enables intuitive control of robotic arms for tasks in manufacturing and automation.
+
+- 🎮 **Virtual Reality (VR) & Gaming**  
+  Enhances user interaction by enabling gesture-based control in immersive environments.
+
+- 🧠 **Human-Computer Interaction (HCI)**  
+  Provides a natural and contactless interface for controlling machines and digital systems.
+
+- 🎓 **Education & Research**  
+  Serves as a practical platform for learning robotics, AI, and embedded systems.
+
+- 🪖 **Defense & Hazardous Environments**  
+  Can be used for remote operation of robotic systems in dangerous or inaccessible areas.
+
+
+----
+
+⚙️ How It Works
+
+<img width="178" height="309" alt="Screenshot 2026-04-27 at 9 31 43 PM" src="https://github.com/user-attachments/assets/293030ca-f1d0-46ad-9bad-fc01105e823a" />
+
+
+
+
+
+1. Capture Input
+    A webcam continuously captures real-time video of hand movements.
+2. Hand Landmark Detection
+    MediaPipe processes each frame to detect hand landmarks and track finger positions.
+3. Gesture Analysis
+    Finger joint angles are calculated using vector-based computations.
+4. Mapping to Actuation
+    The calculated angles are mapped to corresponding servo motor positions.
+5. Data Transmission
+    The processed data is transmitted to the Arduino via serial communication (PySerial).
+6. Hardware Execution
+    The Arduino interprets the received data and controls the servo motors accordingly.
+7. Robotic Movement
+    The robotic hand replicates human finger movements in real time.
+
+----   
 ## 🚧 Development Progress
 
 ### 🔹 Version 1 – Software Simulation
@@ -98,6 +152,30 @@ This project aims to develop an intuitive, real-time gesture-based control syste
 - Achieved real-time physics-based robotic hand simulation  
 
 ---
+
+🔷 Version 6 – Hardware Integration (Arduino + Servos)
+
+* Established serial communication between Python and Arduino using PySerial
+* Transmitted real-time finger angle data from computer vision system to hardware
+* Controlled multiple servo motors to replicate finger movements
+* Implemented angle mapping and calibration for each finger
+* Integrated external power supply with buck converter for stable servo operation
+* Achieved real-time gesture-based control of the physical robotic hand
+  
+---  
+
+🔷 Version 7 – System Optimization & Stability Improvements
+
+* Improved motion smoothness using advanced filtering techniques
+* Reduced servo jitter through deadzone tuning and signal stabilization
+* Optimized serial communication for faster and reliable data transfer
+* Fine-tuned finger angle mapping for better accuracy and realism
+* Enhanced overall system performance and responsiveness
+* Conducted extensive testing for consistent real-time operation
+
+---
+
+
 🤖 Physical Robotic Hand
 
 The robotic hand is implemented using Arduino and servo motors.
@@ -105,6 +183,7 @@ The robotic hand is implemented using Arduino and servo motors.
 <img width="471" height="522" alt="Screenshot 2026-04-08 at 7 44 34 AM" src="https://github.com/user-attachments/assets/6330d6e1-1118-4a4a-a4ec-e96972c22eac" />
 
 🔌 Components
+
 	•	Arduino Nano
 	•	Servo Motors
 	•	External Power Supply
@@ -112,6 +191,7 @@ The robotic hand is implemented using Arduino and servo motors.
 	•	Robotic Hand Structure
 
 ⚙️ Working
+
 	•	Arduino controls servos to move fingers
 	•	Fingers successfully perform open and close motion
 	•	Mechanical system (strings/joints) converts rotation into finger movement
@@ -141,6 +221,28 @@ This project includes a real-time simulation where:
 📘 Detailed Setup Guide (Step-by-Step)
 
 Follow these steps to run the project from scratch.
+
+🔹 Method 1: One-Click Setup (Recommended)
+
+▶️ Mac/Linux
+
+ chmod +x setup.sh
+./setup.sh
+
+▶️ Windows
+
+ setup.bat
+ 
+👉 This will automatically:
+
+	•	Create a virtual environment
+	•	Install all required dependencies
+	•	Prepare the project
+
+---
+
+🔹 Method 2: Manual Setup
+
 🔹 Step 1: Clone the Repository
  -  git clone https://github.com/your-username/gesture-robotic-hand.git
  -  cd gesture-robotic-hand
@@ -170,6 +272,7 @@ Follow these steps to run the project from scratch.
 🤖 Hardware Setup (Detailed)
 
 🔌 Components Required
+
 	•	Arduino Nano
 	•	Servo Motors (SG90 / MG996R)
 	•	External Power Supply(5V–6V recommended)
@@ -202,7 +305,11 @@ A buck converter steps down higher voltage (e.g., 9V/12V) to a stable 5V require
  
  🔌 Complete Wiring (WITH Buck Converter)
 
+ <img width="483" height="312" alt="Screenshot 2026-04-27 at 9 22 24 PM" src="https://github.com/user-attachments/assets/8f7a8ca2-7fb7-47cf-91f5-f3b8ead18963" />
+
+
 🔹 Step 1: Power Input to Buck Converter
+
 	•	Connect battery/adaptor:
 	•	+ (Positive) → IN+ (Buck Converter)
 	•	– (Negative) → IN– (Buck Converter)
@@ -210,6 +317,7 @@ A buck converter steps down higher voltage (e.g., 9V/12V) to a stable 5V require
 ⸻
 
 🔹 Step 2: Set Output Voltage ⚠️
+
 	•	Adjust potentiometer on buck converter
 	•	Use multimeter
 	•	Set output to 5V
@@ -217,12 +325,14 @@ A buck converter steps down higher voltage (e.g., 9V/12V) to a stable 5V require
 ⸻
 
 🔹 Step 3: Power Servos
+
 	•	Buck Converter OUT+ → All servo Red wires
 	•	Buck Converter OUT– → All servo Brown wires
 
 ⸻
 
 🔹 Step 4: Connect Arduino
+
 	•	Arduino GND → Buck Converter OUT– (COMMON GROUND)
 
 👉 This step is mandatory
@@ -230,6 +340,7 @@ A buck converter steps down higher voltage (e.g., 9V/12V) to a stable 5V require
 ⸻
 
 🔹 Step 5: Signal Connections
+
 	•	Thumb → D3
 	•	Index → D5
 	•	Middle → D6
@@ -238,6 +349,7 @@ A buck converter steps down higher voltage (e.g., 9V/12V) to a stable 5V require
   
 ⸻
 ⚙️ Step-by-Step Execution
+
 	1.	Connect power source → buck converter input
 	2.	Adjust output voltage to 5V
 	3.	Connect servos to buck converter output
@@ -391,26 +503,49 @@ Solution:
 	•	Adjust output to 5V before connecting servos
 
 ⸻
+## 💡 Key Learnings
 
-🔮 Next Steps
+- Real-time hand tracking using MediaPipe  
+- Gesture-to-motion mapping using kinematics  
+- Serial communication between Python and Arduino  
+- Servo motor control and calibration  
+- Integration of simulation and physical hardware
 
-The following enhancements are planned to further improve the system:
+---
 
-	•	🔌 Real-Time Hardware Integration
-     Connect gesture input directly with Arduino to achieve live control of individual servo motors
-	•	🖐️ Independent Finger Control
-    Enable precise control of each finger based on real-time gesture angles
-	•	🎯 Improved Gesture Accuracy
-    Enhance tracking stability using advanced filtering and smoothing techniques
-	•	🤖 Complete Physical Robotic Hand
-    Develop a fully functional robotic hand with optimized mechanical design
-	•	📡 Wireless Communication (Future Scope)
-    Implement Bluetooth/WiFi control for untethered operation
+## 🚀 Current Status
+
+The following features have been successfully implemented:
+
+- 🔌 **Real-Time Hardware Integration**  
+  Achieved direct communication between gesture input and Arduino for live servo control.
+
+- 🖐️ **Independent Finger Control**  
+  Implemented precise control of each finger using real-time gesture angle mapping.
+
+- 🎯 **Improved Gesture Accuracy**  
+  Enhanced tracking stability using filtering, smoothing, and noise reduction techniques.
+
+- 🤖 **Complete Physical Robotic Hand**  
+  Developed a functional robotic hand with optimized mechanical design and movement.
+
+---
+
+## 🔮 Future Enhancements
+
+- 📡 **Wireless Communication**  
+  Implement Bluetooth/WiFi modules for untethered control of the robotic hand.
+
+- 🧤 **Glove-Based Control System** *(Optional Upgrade)*  
+  Integrate flex sensors with a wearable glove for more precise gesture input.
+
+- ⚡ **Performance Optimization**  
+  Improve system efficiency and reduce latency for faster real-time response.
 
 ⸻
-## 🚧 Project Status
 
-- Simulation: Completed ✅  
-- Gesture Control: Completed ✅  
-- Arduino Integration: In Progress 🚧
----
+## 👨‍💻 Author
+
+**Shahel Mohammed**  
+BCA – AI, ML & Robotics  
+Yenepoya University  

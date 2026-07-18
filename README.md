@@ -545,7 +545,9 @@ The following features have been successfully implemented:
 ⸻
 
 ## 👨‍💻 Author
+Pulkit Garg, Robotics Facilitator, TCE
 
+Contributions made by-
 **Shahel Mohammed**  
 BCA – AI, ML & Robotics  
 Yenepoya University  
